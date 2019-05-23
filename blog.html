@@ -1,0 +1,23 @@
+{% extends "main.html" %} {% block content %}
+<h1>Build a Blog!</h1>
+
+
+<hr /> {% if blogs|length == 10000 %}
+<p>You havent posted anything yet!</p>
+{% else %}
+
+<ul>
+    {% for blog in blogs %}
+
+    <a href='/single_entry?id={{blog.id}}'>
+        <h3>{{blog.title}}</h3>
+    </a>
+    <h4>
+        <p>{{blog.body}}</p>
+    </h4>
+
+
+
+    {% endfor %}
+</ul>
+{% endif %} {% endblock %}
